@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+
+<section>
+  <h2>What Our Patients Say</h2>
+  <div class="testimonials">
+    <% testimonials.forEach(testimonial => { %>
+      <div class="card">
+        <p>"<%= testimonial.text %>"</p>
+        <h4>- <%= testimonial.name %></h4>
+      </div>
+    <% }); %>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

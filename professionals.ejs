@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+
+<section>
+  <h2>Our Healthcare Professionals</h2>
+  <div class="professionals">
+    <% professionals.forEach(professional => { %>
+      <div class="card">
+        <img src="<%= professional.photo %>" alt="<%= professional.name %>">
+        <h3><%= professional.name %></h3>
+        <p><%= professional.specialty %></p>
+      </div>
+    <% }); %>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
