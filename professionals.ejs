@@ -3,9 +3,14 @@
 <section>
   <h2>Our Healthcare Professionals</h2>
   <div class="professionals">
-    <% professionals.forEach(professional => { %>
+    <% professionals.forEach(professional => { 
+       const imgSrc = professional.photo
+           ? (professional.photo.startsWith('/') ? professional.photo : '/images/' + professional.photo)
+           : '/images/default.jpg';
+      %>
       <div class="card">
-        <img src="<%= professional.photo %>" alt="<%= professional.name %>">
+        <!-- <img src="<%= professional.photo %>" alt="<%= professional.name %>"> -->
+         <img src="<%= imgSrc %>" alt="<%= professional.name %>" onerror="this.onerror=null;this.src='/images/default.png'">
         <h3><%= professional.name %></h3>
         <p><%= professional.specialty %></p>
       </div>
