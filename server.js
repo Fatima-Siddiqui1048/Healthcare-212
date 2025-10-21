@@ -3,7 +3,8 @@ const path = require('path');
 const app = express();
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+// app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname));
 
 // Serve static files (CSS, images, etc.)
 app.use(express.static(path.join(__dirname, 'public')));
